@@ -1,8 +1,0 @@
-{
-  "versionCode": 107,
-  "versionName": "build_1.0.1",
-  "apkUrl": "https://github.com/lkrobacena/sintonia-update/releases/latest/download/SintoniaRP.apk",
-  "notes": "Atualizacao da SintoniaRP",
-  "force": true,
-  "dataVersion": 1
-}
