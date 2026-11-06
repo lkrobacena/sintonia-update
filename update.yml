@@ -1,0 +1,18 @@
+name: Gerar update.json
+on:
+  push:
+    branches: [main]
+    paths: ["data/**", "config.json", "tools/gerar_update.py"]
+permissions:
+  contents: write
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/gerar_update.py
+      - run: |
+          git config user.name "update-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add update.json
+          git diff --cached --quiet || (git commit -m "update.json automatico" && git push)
